@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:InputTransparentIssue"
+             x:Class="InputTransparentIssue.MainPage">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid BackgroundColor="Blue" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped" />
+                </Grid.GestureRecognizers>
+            </Grid>
+            <Grid RowSpacing="0" ColumnSpacing="0" InputTransparent="True" CascadeInputTransparent="False">
+                <Grid BackgroundColor="Red" HorizontalOptions="Center" WidthRequest="300" VerticalOptions="Center" HeightRequest="300">
+                    <Label>Parent - InputTransparent=True, CascadeInputTransparent=False</Label>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid BackgroundColor="Green" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped" />
+                </Grid.GestureRecognizers>
+            </Grid>
+            <Grid RowSpacing="0" ColumnSpacing="0">
+                <Grid BackgroundColor="Red" HorizontalOptions="Center" WidthRequest="300" VerticalOptions="Center" HeightRequest="300">
+                    <Label>Parent - InputTransparent=False, CascadeInputTransparent=True</Label>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>
